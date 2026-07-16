@@ -1079,6 +1079,7 @@ TWIG, $twig_params);
                 'from_planning_edit_ajax' => true,
                 'form_id'                 => "edit_event_form$rand",
                 'start'                   => date("Y-m-d", strtotime($params['start'])),
+                'rand_reminder'      => $rand
             ];
             if (isset($params['parentitemtype'])) {
                 $options['parent'] = getItemForItemtype($params['parentitemtype']);
@@ -1303,6 +1304,7 @@ TWIG, $twig_params);
                 'res_itemtype'       => $params['res_itemtype'],
                 'res_items_id'       => $params['res_items_id'],
                 'form_id'            => "ajax_reminder$rand",
+                'rand_reminder'      => $rand
             ]);
             $callback = "glpi_close_all_dialogs();
                       GLPIPlanning.refresh();
