@@ -362,6 +362,13 @@ class Group extends CommonTreeDropdown
                 'name'               => __('Group DN'),
                 'datatype'           => 'text',
             ];
+            $tab[] = [
+                'id'                 => '6',
+                'table'              => $this->getTable(),
+                'field'              => 'sync_field_group',
+                'name'               => __('Synchronization field'),
+                'datatype'           => 'text',
+            ];
         }
 
         $tab[] = [
@@ -933,6 +940,18 @@ class Group extends CommonTreeDropdown
         }
 
         return $this->getLink($options);
+    }
+
+    /**
+     * Retrieve a group from the database using value of the sync field.
+     *
+     * @param string $value Value of the sync field
+     *
+     * @return boolean
+     */
+    public function getFromDBbySyncField($value)
+    {
+        return $this->getFromDBByCrit(['sync_field_group' => $value]);
     }
 
     public function post_addItem()

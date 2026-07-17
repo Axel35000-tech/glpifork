@@ -43,5 +43,6 @@
 
       {{ fields.smallTitle(__('In groups')) }}
       {{ fields.textField('ldap_group_dn', item.fields['ldap_group_dn'], __('Group DN')) }}
+       {{ item.fields['sync_field_group'] is empty ? constant('Dropdown::EMPTY_VALUE') : item.fields['sync_field_group'] }}
    {% endblock %}
 {% endblock %}
