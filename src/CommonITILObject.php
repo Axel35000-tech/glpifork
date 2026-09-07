@@ -3384,7 +3384,7 @@ abstract class CommonITILObject extends CommonDBTM implements KanbanInterface, T
             ($p['showtype'] == 'search')
             || $p['withmajor']
         ) {
-            $values[6] = static::getPriorityName(6);
+  //          $values[6] = static::getPriorityName(6);
         }
 
         $values[5] = static::getPriorityName(5);
