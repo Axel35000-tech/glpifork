@@ -66,6 +66,10 @@
                 }
             }).done(function(data) {
                 if (document.getElementById("ajax_reminder{{ params.rand_reminder }}")) {
+                    $("div.planning-modal div.modal-body").html(data);
+                    document.getElementById("main-form").id = "ajax_reminder{{ params.rand_reminder }}";
+                    $("form#ajax_reminder{{ params.rand_reminder }}").attr("data-select2-id", "ajax_reminder{{ params.rand_reminder }}");
+                    $('form#ajax_reminder{{ params.rand_reminder }} div.card-header').remove();
                     $("#ajax_reminder{{ params.rand_reminder }}").html(data);
                 }
             });
